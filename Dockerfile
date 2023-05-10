@@ -37,7 +37,7 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn -B -f pom.xml -s /usr/share/maven/ref/settings-docker.xml dependency:resolve
 COPY src ./src
-RUN mvn -f /app/pom.xml clean package -DskipTests
+RUN mvn -f /app/pom.xml clean package -DskipTests -X
 
 # Package stage
 FROM openjdk:11-jdk-slim
