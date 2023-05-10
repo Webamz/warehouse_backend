@@ -31,6 +31,10 @@
 #CMD ["java","-Dserver.port=8080","-jar","/demo.jar"]
 
 
+RUN apt-get update && \
+    apt-get install -y maven
+
+
 # Build stage
 FROM maven:3.8.2-jdk-11 AS build
 WORKDIR /app
