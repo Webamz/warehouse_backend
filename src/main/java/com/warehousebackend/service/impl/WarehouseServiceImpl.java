@@ -16,6 +16,9 @@ import com.warehousebackend.service.UserService;
 import com.warehousebackend.service.WarehouseService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -142,6 +145,7 @@ public class WarehouseServiceImpl implements WarehouseService {
     }
 
     @Override
+    @CacheEvict(cacheNames = "all_warehouses_client", key="#username")
     public boolean removeWarehouseForClient(Warehouse warehouse, String username) {
         AppClient currentUserAppClient = this.userService.findAppClientByUsername(username);
         Optional<Warehouse> warehouseById = this.warehouseRepository.findById(warehouse.getId());
@@ -163,6 +167,7 @@ public class WarehouseServiceImpl implements WarehouseService {
     }
 
     @Override
+    @Cacheable(cacheNames = "all_warehouses_client", key="#currentAppClient")
     public List<Warehouse> findSavedTheWarehouses(AppClient currentAppClient) {
         return currentAppClient.getSaved_theWarehouses();
     }
