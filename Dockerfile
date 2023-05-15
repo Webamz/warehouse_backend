@@ -8,4 +8,4 @@ RUN chmod +x mvnw
 
 RUN ./mvnw clean package
 
-CMD ["java", "-jar", "target/your-app-name.jar"]
+CMD ["java", "-jar", "target/warehouse_backend.jar"]
