@@ -1,12 +1,11 @@
-#
-# Build stage
-#
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-EXPOSE 8080
+FROM openjdk:11-jdk-slim
 
+WORKDIR /app
 
+COPY . .
 
+RUN chmod +x mvnw
 
+RUN ./mvnw clean package
+
+CMD ["java", "-jar", "target/your-app-name.jar"]
