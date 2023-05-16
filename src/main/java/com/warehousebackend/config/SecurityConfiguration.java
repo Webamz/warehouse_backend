@@ -36,13 +36,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(theWarehouseUserDetailsService);
     }
 
-//    @Override
-//    public void configure(final WebSecurity webSecurity) {
-//        webSecurity.ignoring().antMatchers(
-//                "/v3/api-docs/**",
-//                "/swagger-ui/**",
-//                "/swagger-ui/index.html");
-//    }
+    @Override
+    public void configure(final WebSecurity webSecurity) {
+        webSecurity.ignoring().antMatchers(
+                "/v3/api-docs/**",
+                "/swagger-ui/**",
+                "/swagger-ui/index.html");
+    }
 
     @Override
     @Bean
