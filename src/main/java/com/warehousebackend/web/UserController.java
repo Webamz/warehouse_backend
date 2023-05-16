@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin(origins = "https://frontend-warehouse.onrender.com/")
+@CrossOrigin(origins = "https://frontend-warehouse.onrender.com/api/")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;

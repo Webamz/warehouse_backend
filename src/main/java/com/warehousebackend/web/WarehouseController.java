@@ -20,7 +20,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/theWarehouses")
-@CrossOrigin(origins = "https://frontend-warehouse.onrender.com/")
+@CrossOrigin(origins = "https://frontend-warehouse.onrender.com/api/")
 public class WarehouseController {
     private final WarehouseService warehouseService;
     private final CategoryService categoryService;
