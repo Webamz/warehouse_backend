@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Set;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://frontend-warehouse.onrender.com/")
 public class HomeController {
     private final WarehouseService warehouseService;
 
