@@ -163,7 +163,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    @CrossOrigin(origins = "https://frontend-warehouse.onrender.com")
+    @CrossOrigin(origins = "https://mywarehouses.netlify.app")
     @Operation(summary = "Login based on user role after authentication", security = @SecurityRequirement(name = "bearerAuth"))
     public String logInUser(@RequestParam String username) {
         UserEntity userByUsername = this.userService.findUserByUsername(username);

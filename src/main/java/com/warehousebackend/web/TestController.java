@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://frontend-warehouse.onrender.com")
+@CrossOrigin(origins = "https://mywarehouses.netlify.app")
 public class TestController {
 
     private final TestService testService;
